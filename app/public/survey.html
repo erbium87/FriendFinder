@@ -5,7 +5,8 @@
 	<title>Friend Survey</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
+  	<script src="https://code.jquery.com/jquery.js"></script>
+  	<script src="js/bootstrap.js"></script>
 
 </head>
 <body>
@@ -135,7 +136,7 @@
   </div>
   <hr>
 	<div>
-    <button type="submit" class="btn btn-primary btn-lg btn-block submit">Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block submit" data-toggle="modal" data-target="#myModal">Get My Friend</button>
 	</div>
   </div>
 
@@ -144,6 +145,29 @@
       <p><a href="/api/friends">API Friend Link</a> | <a href="https://github.com/erbium87/FriendFinder.git">GitHub Repo</a></p>
     </div>
   </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Your Friend is...: </h4>
+      </div>
+      <div class="modal-body">
+      	<div>
+      		<p id ="friends"></p>
+      		<img id="img" src="" alt="">
+      		
+      	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Retake Survey</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 	
 </body>
@@ -185,7 +209,7 @@ function makeFriends(){
 
 	$.ajax({ url: currentURL + "/api/friends", method: "GET" })
   .done(function(friendArray) {
-	var trueFriend =[];
+	var trueFriend = {};
   		
 	  if (counter < friendArray.length) {
 	  	var sum = 100;
@@ -196,34 +220,36 @@ function makeFriends(){
 			for (var i = 0; i < newUser.scores.length; i++) {
 				var newUserResponse = newUser.scores[i];
 				var existingResponse = friendArray[j].scores[i];
-
 				 
 				if (newUserResponse != existingResponse) {
 					match.push(Math.abs(newUserResponse - existingResponse));
 	console.log(match);
-
 				}
 			}//end of i loop for newUser scores to current user scores
-
 			interimSum = match.reduce(function(acc, val) {
 			return acc + val;
 				}, 0);
 			if (interimSum < sum) {
 				sum = interimSum;
-				trueFriend.push(friendArray[j].name);
-
+				trueFriend = {
+					friendName: friendArray[j].name,
+					friendPhoto: friendArray[j].photo
+				};
+	  		$("#friends").html(trueFriend.friendName);
+	  		$("#img").attr("src", trueFriend.friendPhoto);
 			}
-	console.log(sum);
-
+	// console.log(sum);
+	// console.log(trueFriend);
 			counter ++;
 		}//j loop end of for loop for each user in system already
 	console.log(sum);
 	  }//end if counter 
+	 
+
 	  console.log(trueFriend);
     });
 
 }
-
  
 
 </script>
