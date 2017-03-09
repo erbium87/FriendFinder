@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Friend Survey</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+<body>
+
+  <div class = "container">
+
+	<div class="jumbotron">
+	    <h1 class="text-center"><span class="glyphicon glyphicon-glass"></span>Find a Friend!</h1>
+      <hr>
+		<p class = "text-center title">Begin Your Journey to Friendship Below</p>
+	</div> 
+
+	<form>
+	  <div class="form-group">
+	  	<h2>About You</h2>
+	    <label for="name">Name (Required)</label>
+	    <input type="text" class="form-control" id="name" placeholder="Name">
+	  </div>
+	  <div class="form-group">
+	    <label for="picture">Link to Photo Image (Required)</label>
+	    <input type="picture" class="form-control" id="photo" placeholder="photo url">
+	  </div>
+	  <hr>
+	</form>
+
+  <div>
+  	<h3>Question One</h3>
+  	<h4>A good first friend date would consist of lots of laughter:</h4>
+	<select class="custom-select bg-success" id="q1">
+		<option selected value="0">Select an Option...</option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2 (Mostly Disagree)</option>
+		<option value="3">3 (Kind of in the Middle)</option>
+		<option value="4">4 (Mostly Agree)</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+	<h3>Question Two</h3>
+  	<h4>Kids are allowed on friends night out:</h4>
+	<select class="custom-select bg-success" id="q2">
+		<option selected>Select an Option...</option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2 (Mostly Disagree)</option>
+		<option value="3">3 (Kind of in the Middle)</option>
+		<option value="4">4 (Mostly Agree)</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+	<h3>Question Three</h3>
+  	<h4>If needed you will be the best wingman for your new bud:</h4>
+	<select class="custom-select bg-success" id="q3">
+		<option selected>Select an Option...</option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2 (Mostly Disagree)</option>
+		<option value="3">3 (Kind of in the Middle)</option>
+		<option value="4">4 (Mostly Agree)</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+	<h3>Question Four</h3>
+  	<h4>It's ok to cancel plans if you change your mind and "just aren't feeling it":</h4>
+	<select class="custom-select bg-success" id="q4">
+		<option selected>Select an Option...</option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2 (Mostly Disagree)</option>
+		<option value="3">3 (Kind of in the Middle)</option>
+		<option value="4">4 (Mostly Agree)</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+	<h3>Question Five</h3>
+  	<h4>You have a theme song play in your head every time you enter a room:</h4>
+	<select class="custom-select bg-success" id="q5">
+		<option selected>Select an Option...</option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2 (Mostly Disagree)</option>
+		<option value="3">3 (Kind of in the Middle)</option>
+		<option value="4">4 (Mostly Agree)</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+	<h3>Question Six</h3>
+  	<h4>You wish your life had a laugh track:</h4>
+	<select class="custom-select bg-success" id="q6">
+		<option selected>Select an Option...</option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2 (Mostly Disagree)</option>
+		<option value="3">3 (Kind of in the Middle)</option>
+		<option value="4">4 (Mostly Agree)</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+	<h3>Question Seven</h3>
+  	<h4>You prefer friends who are lazy:</h4>
+	<select class="custom-select bg-success" id="q7">
+		<option selected>Select an Option...</option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2 (Mostly Disagree)</option>
+		<option value="3">3 (Kind of in the Middle)</option>
+		<option value="4">4 (Mostly Agree)</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+	<h3>Question Eight</h3>
+  	<h4>You enjoy surfing YouTube for hours:</h4>
+	<select class="custom-select bg-success" id="q8">
+		<option selected>Select an Option...</option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2 (Mostly Disagree)</option>
+		<option value="3">3 (Kind of in the Middle)</option>
+		<option value="4">4 (Mostly Agree)</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+	<h3>Question Nine</h3>
+  	<h4>You prefer plans to be made last minute:</h4>
+	<select class="custom-select bg-success" id="q9">
+		<option selected>Select an Option...</option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2 (Mostly Disagree)</option>
+		<option value="3">3 (Kind of in the Middle)</option>
+		<option value="4">4 (Mostly Agree)</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+	<h3>Question Ten</h3>
+  	<h4>You like when your friends give you nicknames:</h4>
+	<select class="custom-select bg-success" id="q10">
+		<option selected>Select an Option...</option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2 (Mostly Disagree)</option>
+		<option value="3">3 (Kind of in the Middle)</option>
+		<option value="4">4 (Mostly Agree)</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+  </div>
+  <hr>
+	<div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block submit">Submit</button>
+	</div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p><a href="/api/friends">API Friend Link</a> | <a href="https://github.com/erbium87/FriendFinder.git">GitHub Repo</a></p>
+    </div>
+  </footer>
+
+	
+</body>
+</html>
+
+<script type="text/javascript">
+var newUser = {};
+   $(".submit").on("click", function(event) {
+      event.preventDefault();
+
+      newUser = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: [
+        	$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), 
+        	$("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), 
+        	$("#q9").val(), $("#q10").val()
+        ]
+
+
+      };
+       makeFriends();
+
+      console.log(newUser.scores);
+
+      $.post("/api/friends", newUser,
+        function(data) {
+          $("#name").val("");
+          $("#photo").val("");
+          // $("#q1").val(0);
+
+        });
+    });
+
+function makeFriends(){
+
+	var currentURL = window.location.origin;
+	var counter = 0;
+
+	$.ajax({ url: currentURL + "/api/friends", method: "GET" })
+  .done(function(friendArray) {
+	var trueFriend =[];
+  		
+	  if (counter < friendArray.length) {
+	  	var sum = 100;
+		for (var j = 0; j < friendArray.length; j++) {
+			
+			var match = [];
+		
+			for (var i = 0; i < newUser.scores.length; i++) {
+				var newUserResponse = newUser.scores[i];
+				var existingResponse = friendArray[j].scores[i];
+
+				 
+				if (newUserResponse != existingResponse) {
+					match.push(Math.abs(newUserResponse - existingResponse));
+	console.log(match);
+
+				}
+			}//end of i loop for newUser scores to current user scores
+
+			interimSum = match.reduce(function(acc, val) {
+			return acc + val;
+				}, 0);
+			if (interimSum < sum) {
+				sum = interimSum;
+				trueFriend.push(friendArray[j].name);
+
+			}
+	console.log(sum);
+
+			counter ++;
+		}//j loop end of for loop for each user in system already
+	console.log(sum);
+	  }//end if counter 
+	  console.log(trueFriend);
+    });
+
+}
+
+ 
+
+</script>
