@@ -21,8 +21,8 @@ var friendArray = [
     scores: [5, 4, 2, 2, 4, 5, 1, 2, 3, 5]
       },
   {
-    name: "http://www.pleated-jeans.com/wp-content/uploads/2014/01/funny-selfie-9-1.jpg",
-    photo: "google.com",
+  	name: "Tobias",
+    photo: "http://www.pleated-jeans.com/wp-content/uploads/2014/01/funny-selfie-9-1.jpg",
     scores: [2, 4, 4, 5, 2, 2, 3, 1, 2, 5]
       },
   {

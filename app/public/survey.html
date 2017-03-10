@@ -152,18 +152,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">Your Friend is...: </h4>
+        <h4 class="modal-title" id="exampleModalLabel">Your New Best Friend is... </h4>
       </div>
       <div class="modal-body">
       	<div>
-      		<p id ="friends"></p>
+      		<h3 id ="friends"></h3>
       		<img id="img" src="" alt="">
       		
       	</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Retake Survey</button>
+        <button type="button" class="btn btn-primary survey" data-dismiss="modal">Retake Survey</button>
       </div>
     </div>
   </div>
@@ -175,6 +175,11 @@
 
 <script type="text/javascript">
 var newUser = {};
+var counter = 0;
+var trueFriend = {};
+var sum = 100;
+
+
    $(".submit").on("click", function(event) {
       event.preventDefault();
 
@@ -186,12 +191,10 @@ var newUser = {};
         	$("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), 
         	$("#q9").val(), $("#q10").val()
         ]
-
-
       };
        makeFriends();
 
-      console.log(newUser.scores);
+      // console.log(newUser.scores);
 
       $.post("/api/friends", newUser,
         function(data) {
@@ -201,18 +204,15 @@ var newUser = {};
 
         });
     });
-
+	
 function makeFriends(){
 
 	var currentURL = window.location.origin;
-	var counter = 0;
 
 	$.ajax({ url: currentURL + "/api/friends", method: "GET" })
   .done(function(friendArray) {
-	var trueFriend = {};
   		
 	  if (counter < friendArray.length) {
-	  	var sum = 100;
 		for (var j = 0; j < friendArray.length; j++) {
 			
 			var match = [];
@@ -223,7 +223,7 @@ function makeFriends(){
 				 
 				if (newUserResponse != existingResponse) {
 					match.push(Math.abs(newUserResponse - existingResponse));
-	console.log(match);
+	// console.log(match);
 				}
 			}//end of i loop for newUser scores to current user scores
 			interimSum = match.reduce(function(acc, val) {
@@ -242,14 +242,30 @@ function makeFriends(){
 	// console.log(trueFriend);
 			counter ++;
 		}//j loop end of for loop for each user in system already
-	console.log(sum);
+	// console.log(sum);
 	  }//end if counter 
-	 
 
-	  console.log(trueFriend);
+	  // console.log(trueFriend);
     });
 
-}
- 
+}//end of makeFriends function
 
+$(".survey").on("click", function(event){
+		counter = 0;
+		trueFriend = {};
+		sum = 100;
+		$("#name").val("");
+        $("#photo").val("");
+        $("#q1").val(0); 
+        $("#q2").val(0); 
+        $("#q3").val(0); 
+        $("#q4").val(0); 
+    	$("#q5").val(0); 
+    	$("#q6").val(0); 
+    	$("#q7").val(0); 
+    	$("#q8").val(0); 
+    	$("#q9").val(0); 
+    	$("#q10").val(0);
+});
+ 
 </script>
