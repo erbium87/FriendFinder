@@ -35,7 +35,7 @@
   <div>
   	<h3>Question One</h3>
   	<h4>A good first friend date would consist of lots of laughter:</h4>
-	<select class="custom-select bg-success" id="q1">
+	<select class="custom-select answer" id="q1">
 		<option selected value="0">Select an Option...</option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2 (Mostly Disagree)</option>
@@ -45,7 +45,7 @@
 	</select>
 	<h3>Question Two</h3>
   	<h4>Kids are allowed on friends night out:</h4>
-	<select class="custom-select bg-success" id="q2">
+	<select class="custom-select  answer" id="q2">
 		<option selected>Select an Option...</option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2 (Mostly Disagree)</option>
@@ -55,7 +55,7 @@
 	</select>
 	<h3>Question Three</h3>
   	<h4>If needed you will be the best wingman for your new bud:</h4>
-	<select class="custom-select bg-success" id="q3">
+	<select class="custom-select answer" id="q3">
 		<option selected>Select an Option...</option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2 (Mostly Disagree)</option>
@@ -65,7 +65,7 @@
 	</select>
 	<h3>Question Four</h3>
   	<h4>It's ok to cancel plans if you change your mind and "just aren't feeling it":</h4>
-	<select class="custom-select bg-success" id="q4">
+	<select class="custom-select answer" id="q4">
 		<option selected>Select an Option...</option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2 (Mostly Disagree)</option>
@@ -75,7 +75,7 @@
 	</select>
 	<h3>Question Five</h3>
   	<h4>You have a theme song play in your head every time you enter a room:</h4>
-	<select class="custom-select bg-success" id="q5">
+	<select class="custom-select answer" id="q5">
 		<option selected>Select an Option...</option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2 (Mostly Disagree)</option>
@@ -85,7 +85,7 @@
 	</select>
 	<h3>Question Six</h3>
   	<h4>You wish your life had a laugh track:</h4>
-	<select class="custom-select bg-success" id="q6">
+	<select class="custom-select answer" id="q6">
 		<option selected>Select an Option...</option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2 (Mostly Disagree)</option>
@@ -95,7 +95,7 @@
 	</select>
 	<h3>Question Seven</h3>
   	<h4>You prefer friends who are lazy:</h4>
-	<select class="custom-select bg-success" id="q7">
+	<select class="custom-select answer" id="q7">
 		<option selected>Select an Option...</option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2 (Mostly Disagree)</option>
@@ -105,7 +105,7 @@
 	</select>
 	<h3>Question Eight</h3>
   	<h4>You enjoy surfing YouTube for hours:</h4>
-	<select class="custom-select bg-success" id="q8">
+	<select class="custom-select answer" id="q8">
 		<option selected>Select an Option...</option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2 (Mostly Disagree)</option>
@@ -115,7 +115,7 @@
 	</select>
 	<h3>Question Nine</h3>
   	<h4>You prefer plans to be made last minute:</h4>
-	<select class="custom-select bg-success" id="q9">
+	<select class="custom-select answer" id="q9">
 		<option selected>Select an Option...</option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2 (Mostly Disagree)</option>
@@ -125,7 +125,7 @@
 	</select>
 	<h3>Question Ten</h3>
   	<h4>You like when your friends give you nicknames:</h4>
-	<select class="custom-select bg-success" id="q10">
+	<select class="custom-select answer" id="q10">
 		<option selected>Select an Option...</option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2 (Mostly Disagree)</option>
@@ -196,7 +196,7 @@ var sum = 100;
 
       // console.log(newUser.scores);
 
-      $.post("/api/friends", newUser,
+      $.post("/api/friends", newUser).done(
         function(data) {
           $("#name").val("");
           $("#photo").val("");

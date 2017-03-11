@@ -28,7 +28,7 @@ var friendArray = [
   {
     name: "Amanda",
     photo: "http://www.bandofcats.com/wp-content/uploads/2014/07/cat-selfie-03.jpg",
-    scores: [5, 5, 2, 1, 2, 3, 1, 1, 3, 5]
+    scores: [5, 5, 3, 1, 2, 3, 1, 1, 3, 5]
       }
 
 ];

@@ -2,7 +2,7 @@
 	background-image: url(../images/friend2.jpg);
 	background-size: cover;
 	background-position: center;
-	color: white;	
+	color: #ddf3fa;	
 	font-family: "Comic Sans MS", cursive, sans-serif;
 
 }
@@ -23,7 +23,15 @@ body {
 	background-color: #00BFFF;
 }
 
-/*.btn {
-	color: #0000FF;
+a {
+	color: #000000;
 }
-*/
+
+/*.answer {
+	background-color: #ADD8E6;
+}*/
+
+.answer ,#name, #photo{
+	background-color: #AAE2F4;
+
+}
