@@ -194,9 +194,7 @@ var interimSum = 0;
         ]
       };
        makeFriends();
-
-      // console.log(newUser.scores);
-
+       
       $.post("/api/friends", newUser).done(
         function(data) {
           // $("#name").val("");
@@ -214,7 +212,6 @@ function makeFriends(){
   		
 	  if (counter < friendArray.length) {
 		for (var j = 0; j < friendArray.length; j++) {
-			
 			var match = [];
 		
 			for (var i = 0; i < newUser.scores.length; i++) {
@@ -223,7 +220,6 @@ function makeFriends(){
 				 
 				if (newUserResponse != existingResponse) {
 					match.push(Math.abs(newUserResponse - existingResponse));
-	// console.log(match);
 				}
 			}//end of i loop for newUser scores to current user scores
 			interimSum = match.reduce(function(acc, val) {
@@ -238,22 +234,17 @@ function makeFriends(){
 	  		$("#friends").html(trueFriend.friendName);
 	  		$("#img").attr("src", trueFriend.friendPhoto);
 			}
-	// console.log(sum);
-	// console.log(trueFriend);
 			counter ++;
 		}//j loop end of for loop for each user in system already
-	// console.log(sum);
 	  }//end if counter 
-
-	  // console.log(trueFriend);
     });
-
 }//end of makeFriends function
 
 $(".survey").on("click", function(event){
 		counter = 0;
 		trueFriend = {};
 		sum = 100;
+		interimSum = 0;
 		$("#name").val("");
         $("#photo").val("");
         $("#q1").val(0); 
