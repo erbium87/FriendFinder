@@ -178,6 +178,7 @@ var newUser = {};
 var counter = 0;
 var trueFriend = {};
 var sum = 100;
+var interimSum = 0;
 
 
    $(".submit").on("click", function(event) {
@@ -198,10 +199,9 @@ var sum = 100;
 
       $.post("/api/friends", newUser).done(
         function(data) {
-          $("#name").val("");
-          $("#photo").val("");
-          // $("#q1").val(0);
-
+          // $("#name").val("");
+          // $("#photo").val("");
+          // // $("#q1").val(0);
         });
     });
 	
