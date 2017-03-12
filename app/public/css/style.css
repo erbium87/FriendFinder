@@ -31,3 +31,8 @@ a {
 	background-color: #AAE2F4;
 
 }
+
+.img {
+	max-width: 250px;
+	max-height: 250px;
+}
